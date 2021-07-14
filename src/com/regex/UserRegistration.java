@@ -14,7 +14,10 @@ public class UserRegistration {
     public boolean emailValidation(String email) {
         return Pattern.matches("^a-zA-Z0-9.]+@[a-zA-Z0-9.]+$", email);
     }
-    
+
+    public boolean phoneNumberValidation(String phoneNumber) {
+        return Pattern.matches("(0|91)?[7-9][0-9]{9}$", phoneNumber);
+    }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         UserRegistration person = new UserRegistration();
@@ -24,10 +27,13 @@ public class UserRegistration {
         String lastName = scanner.nextLine();
         System.out.println("enter Email");
         String email = scanner.nextLine();
+        System.out.println("enter phone number");
+        String phoneNumber = scanner.nextLine();
 
         System.out.println("Welcome " + firstName + " " + lastName + " to the User Registration Program");
         System.out.println(person.firstNameValidation(firstName));
         System.out.println(person.lastNameValidation(lastName));
         System.out.println(person.emailValidation(email));
+        System.out.println(person.phoneNumberValidation(phoneNumber));
     }
 }
