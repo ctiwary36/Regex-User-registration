@@ -19,7 +19,7 @@ public class UserRegistration {
         return Pattern.matches("(0|91)?[7-9][0-9]{9}$", phoneNumber);
     }
     public boolean passwordValidation(String password) {
-        return Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()])(?=\\\\S+$).{8,20}$", password);
+        return Pattern.matches("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&-+=()]).{8,}$", password);
     }
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
